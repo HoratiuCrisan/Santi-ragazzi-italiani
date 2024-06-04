@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -153,6 +154,8 @@ public class GameManager : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
+        StartCoroutine(LoadSceneAfterDelay(8f));
     }
 
     private void EndBadGame()
@@ -166,7 +169,16 @@ public class GameManager : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
+        StartCoroutine(LoadSceneAfterDelay(8f)); 
     }
+
+    IEnumerator LoadSceneAfterDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime); // Wait for n seconds
+        SceneManager.LoadScene("SampleScene");
+    }
+
 
     private void Update()
     {

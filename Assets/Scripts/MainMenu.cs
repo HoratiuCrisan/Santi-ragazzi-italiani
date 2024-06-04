@@ -17,11 +17,4 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
-
-
-    public void OpenOptions()
-    {
-        Debug.Log("Options button pressed");
-        // Logica pentru a deschide meniul de opțiuni
-    }
 }
